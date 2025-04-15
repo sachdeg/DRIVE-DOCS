@@ -3,7 +3,8 @@
     {
       "service_id": 101,
       "vin": "1HGCM82633A123455",
-      "vehicle_model": "Toyota Camry",
+      "make": "Toyota",
+      "vehicle_model": "Camry",
       "service_type": "Oil Change",
       "cost": 99.99,
       "service_date": "2024-03-15",
@@ -14,35 +15,64 @@
     {
       "service_id": 102,
       "vin": "1HGCM82633A123456",
-      "vehicle_model": "Toyota Camry",
+      "make": "Toyota",
+      "vehicle_model": "Camry",
       "service_type": "Brake Inspection",
-      "cost": 120.0,
+      "cost": 120,
       "service_date": "2024-04-10",
       "customer_name": "John Doe",
       "license_plate": "ABC1234",
       "phone": "6471234568"
     },
     {
-      "service_id": 102,
+      "service_id": 103,
       "vin": "1HGCM82633A123456",
-      "vehicle_model": "Toyota Camry",
+      "make": "Toyota",
+      "vehicle_model": "Camry",
       "service_type": "Brake Inspection",
-      "cost": 120.0,
+      "cost": 120,
       "service_date": "2024-04-10",
       "customer_name": "John Doe",
       "license_plate": "ABC1234",
       "phone": "6471234568"
     },
     {
-      "service_id": 101,
+      "service_id": 104,
       "vin": "1HGCM82633A123455",
-      "vehicle_model": "Toyota Camry",
+      "make": "Toyota",
+      "vehicle_model": "Camry",
       "service_type": "Oil Change",
       "cost": 99.99,
       "service_date": "2024-03-15",
       "customer_name": "John Doe",
-      "license_plate": "ABC1234",
+      "license_plate": "ABC1235",
       "phone": "6471234567"
+    },
+    {
+      "id": "b5dd",
+      "service_id": 105,
+      "vin": "1HGCM82633A123457",
+      "make": "Toyota",
+      "vehicle_model": "Camry",
+      "license_plate": "XYZ123",
+      "customer_name": "John Doe",
+      "phone": "6471234567",
+      "service_type": "Oil change",
+      "cost": 50,
+      "service_date": "2025-04-16"
+    },
+    {
+      "id": "56a9",
+      "service_id": 106,
+      "vin": "1HGCM82633A123456",
+      "make": "Toyota",
+      "vehicle_model": "Camry",
+      "license_plate": "ABC123",
+      "customer_name": "John Doe",
+      "phone": "6471234567",
+      "service_type": "tire rotation",
+      "cost": 70,
+      "service_date": "2025-04-15"
     }
   ]
 }

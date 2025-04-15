@@ -14,8 +14,7 @@ export default function CreateServiceRecordPage() {
   const [serviceData, setServiceData] = useState({
     service_type: "",
     service_date: "",
-    cost: "",
-    phone: "",
+    cost: ""
   });
 
   const handleLookupChange = async (value: string) => {
@@ -33,8 +32,10 @@ export default function CreateServiceRecordPage() {
 
       const filtered = allVehicles.filter((v: any) =>
         v.vin.toLowerCase().includes(value.toLowerCase()) ||
-        v.license_plate.toLowerCase().includes(value.toLowerCase())
+        v.license_plate.toLowerCase().includes(value.toLowerCase()) ||
+        v.phone.toLowerCase().includes(value.toLowerCase())
       );
+      
 
       setSearchResults(filtered);
       if (filtered.length === 0) {
@@ -62,10 +63,11 @@ export default function CreateServiceRecordPage() {
     const newRecord = {
       service_id: newServiceId,
       vin: vehicle?.vin ?? "",
+      make: vehicle?.make ?? "",
       vehicle_model: vehicle?.model ?? "",
       license_plate: vehicle?.license_plate ?? "",
-      customer_name: "", // optional
-      phone: serviceData.phone,
+      customer_name: vehicle?.customer_name ?? "",
+      phone: vehicle?.phone ?? "",
       service_type: serviceData.service_type,
       cost: parseFloat(serviceData.cost),
       service_date: serviceData.service_date,
@@ -86,12 +88,12 @@ export default function CreateServiceRecordPage() {
 
       {/* 🔍 Search Bar (full width) */}
       <div className="mb-6">
-        <label className="block font-medium mb-1">Search VIN or License Plate</label>
+        <label className="block font-medium mb-1">Search VIN/License Plate/Phone number</label>
         <input
           type="text"
           value={lookup}
           onChange={(e) => handleLookupChange(e.target.value)}
-          placeholder="Type VIN or license plate"
+          placeholder="Type VIN/license plate/phone number"
           className="w-full px-3 py-2 border rounded"
         />
         {notFound && <p className="text-red-600 mt-2">No matches found.</p>}
@@ -109,6 +111,8 @@ export default function CreateServiceRecordPage() {
               <p><strong>Model:</strong> {vehicle.model}</p>
               <p><strong>Year:</strong> {vehicle.year}</p>
               <p><strong>License Plate:</strong> {vehicle.license_plate}</p>
+              <p><strong>Customer Name:</strong> {vehicle.customer_name}</p>
+              <p><strong>Phone:</strong> {vehicle.phone}</p>
             </div>
           )}
 
@@ -150,18 +154,6 @@ export default function CreateServiceRecordPage() {
               />
             </div>
 
-            <div>
-              <label className="block mb-1 font-medium">Phone</label>
-              <input
-                type="text"
-                name="phone"
-                value={serviceData.phone}
-                onChange={handleServiceChange}
-                required
-                className="w-full px-3 py-2 border rounded"
-              />
-            </div>
-
             <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
               Submit Record
             </button>
@@ -187,6 +179,8 @@ export default function CreateServiceRecordPage() {
                   <p><strong>Model:</strong> {v.model}</p>
                   <p><strong>Year:</strong> {v.year}</p>
                   <p><strong>License Plate:</strong> {v.license_plate}</p>
+                  <p><strong>Customer:</strong> {v.customer_name}</p>
+                  <p><strong>Phone:</strong> {v.phone}</p>
                 </div>
               ))}
             </div>
