@@ -1,25 +1,14 @@
 {
-    "vehicles": [
-      {
-        "vin": "1HGCM82633A123456",
-        "make": "Toyota",
-        "model": "Camry",
-        "year": 2020,
-        "license_plate": "ABC123",
-        "customer_name": "John Doe",
-        "phone": "6471234567"
-      }
-      ,
-      {
-        "vin": "1HGCM82633A123457",
-        "make": "Toyota",
-        "model": "Camry",
-        "year": 2020,
-        "license_plate": "XYZ123",
-        "customer_name": "John Doe",
-        "phone": "6471234567"
-      }
-      
-    ]
-  }
-  
+  "vehicles": [
+    {
+      "vin": "1HGCM82633A123458",
+      "make": "Toyota",
+      "model": "Camry",
+      "year": 2020,
+      "license_plate": "XYZ123",
+      "customer_name": "John Doe",
+      "phone": "6471234567",
+      "id": "72f2"
+    }
+  ]
+}

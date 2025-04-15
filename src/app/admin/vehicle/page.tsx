@@ -16,6 +16,7 @@ type Vehicle = {
 
 export default function VehicleAdminPage() {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const fetchVehicles = async () => {
     const res = await fetch("http://localhost:4001/vehicles", {
@@ -28,6 +29,13 @@ export default function VehicleAdminPage() {
   useEffect(() => {
     fetchVehicles();
   }, []);
+
+  // Filter vehicles based on search
+  const filteredVehicles = vehicles.filter((v) =>
+    v.vin.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    v.license_plate.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    v.customer_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <main className="p-8">
@@ -53,6 +61,17 @@ export default function VehicleAdminPage() {
         </Link>
       </div>
 
+      {/* Search Bar */}
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search by VIN, License Plate, or Customer Name"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full px-4 py-2 border rounded shadow-sm"
+        />
+      </div>
+
       {/* Vehicle Table */}
       <table className="w-full border border-gray-300 text-left">
         <thead className="bg-gray-100">
@@ -68,25 +87,33 @@ export default function VehicleAdminPage() {
           </tr>
         </thead>
         <tbody>
-          {vehicles.map((v) => (
-            <tr key={v.id}>
-              <td className="p-2 border">{v.vin}</td>
-              <td className="p-2 border">{v.make}</td>
-              <td className="p-2 border">{v.model}</td>
-              <td className="p-2 border">{v.year}</td>
-              <td className="p-2 border">{v.license_plate}</td>
-              <td className="p-2 border">{v.customer_name}</td>
-              <td className="p-2 border">{v.phone}</td>
-              <td className="p-2 border">
-                <Link
-                  href={`/admin/vehicle/${v.id}`}
-                  className="text-blue-600 hover:underline"
-                >
-                  View
-                </Link>
+          {filteredVehicles.length > 0 ? (
+            filteredVehicles.map((v) => (
+              <tr key={v.id}>
+                <td className="p-2 border">{v.vin}</td>
+                <td className="p-2 border">{v.make}</td>
+                <td className="p-2 border">{v.model}</td>
+                <td className="p-2 border">{v.year}</td>
+                <td className="p-2 border">{v.license_plate}</td>
+                <td className="p-2 border">{v.customer_name}</td>
+                <td className="p-2 border">{v.phone}</td>
+                <td className="p-2 border">
+                  <Link
+                    href={`/admin/vehicle/${v.id}`}
+                    className="text-blue-600 hover:underline"
+                  >
+                    View
+                  </Link>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={8} className="p-4 text-center text-gray-500">
+                No matching vehicles found.
               </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </main>
