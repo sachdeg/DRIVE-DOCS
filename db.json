@@ -1,0 +1,48 @@
+{
+  "services": [
+    {
+      "service_id": 101,
+      "vin": "1HGCM82633A123455",
+      "vehicle_model": "Toyota Camry",
+      "service_type": "Oil Change",
+      "cost": 99.99,
+      "service_date": "2024-03-15",
+      "customer_name": "John Doe",
+      "license_plate": "ABC1234",
+      "phone": "6471234567"
+    },
+    {
+      "service_id": 102,
+      "vin": "1HGCM82633A123456",
+      "vehicle_model": "Toyota Camry",
+      "service_type": "Brake Inspection",
+      "cost": 120.0,
+      "service_date": "2024-04-10",
+      "customer_name": "John Doe",
+      "license_plate": "ABC1234",
+      "phone": "6471234568"
+    },
+    {
+      "service_id": 102,
+      "vin": "1HGCM82633A123456",
+      "vehicle_model": "Toyota Camry",
+      "service_type": "Brake Inspection",
+      "cost": 120.0,
+      "service_date": "2024-04-10",
+      "customer_name": "John Doe",
+      "license_plate": "ABC1234",
+      "phone": "6471234568"
+    },
+    {
+      "service_id": 101,
+      "vin": "1HGCM82633A123455",
+      "vehicle_model": "Toyota Camry",
+      "service_type": "Oil Change",
+      "cost": 99.99,
+      "service_date": "2024-03-15",
+      "customer_name": "John Doe",
+      "license_plate": "ABC1234",
+      "phone": "6471234567"
+    }
+  ]
+}
