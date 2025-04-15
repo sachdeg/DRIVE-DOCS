@@ -1,0 +1,19 @@
+{
+    "vehicles": [
+      {
+        "vin": "1HGCM82633A123456",
+        "make": "Toyota",
+        "model": "Camry",
+        "year": 2020,
+        "license_plate": "ABC1234"
+      },
+      {
+        "vin": "2HGCM82633A999999",
+        "make": "Honda",
+        "model": "Civic",
+        "year": 2021,
+        "license_plate": "XYZ9876"
+      }
+    ]
+  }
+  
