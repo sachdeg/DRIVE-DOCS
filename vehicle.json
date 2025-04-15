@@ -1,7 +1,7 @@
 {
   "vehicles": [
     {
-      "vin": "1HGCM82633A123458",
+      "vin": "1HGCM82633A123457",
       "make": "Toyota",
       "model": "Camry",
       "year": 2020,
@@ -9,6 +9,26 @@
       "customer_name": "John Doe",
       "phone": "6471234567",
       "id": "72f2"
+    },
+    {
+      "id": "07f1",
+      "vin": "1HGCM82633A123458",
+      "make": "Honda",
+      "model": "CRV",
+      "year": "2023",
+      "license_plate": "CZJD180",
+      "customer_name": "Gaurav",
+      "phone": "7676767676"
+    },
+    {
+      "id": "3a5f",
+      "vin": "1HGCM82633A123459",
+      "make": "Honda",
+      "model": "Accord",
+      "year": "2016",
+      "license_plate": "CSWD227",
+      "customer_name": "Gaurav",
+      "phone": "8989898989"
     }
   ]
 }
