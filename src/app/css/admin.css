@@ -108,4 +108,19 @@ body {
   .link-button:hover {
     background-color: #1d4ed8;
   }
-    
+  
+  .link-button {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+  }
+  
+  .link-button:hover {
+    background-color: #1d4ed8;
+  }
+  
