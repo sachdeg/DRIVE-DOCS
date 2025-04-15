@@ -29,7 +29,7 @@ export default function HomePage() {
     <main className="home-container">
 
 <nav className="nav-bar">
-  <a href="/collection" className="admin-link">Admin</a>
+  <a href="/collection" className="admin-link">Collection</a>
 </nav>
 
 

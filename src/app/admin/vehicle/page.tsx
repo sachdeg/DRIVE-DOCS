@@ -30,7 +30,18 @@ export default function VehicleAdminPage() {
     fetchVehicles();
   }, []);
 
-  // Filter vehicles based on search
+  const handleDelete = async (id: number) => {
+    const confirmDelete = confirm("Are you sure you want to delete this vehicle?");
+    if (!confirmDelete) return;
+
+    await fetch(`http://localhost:4001/vehicles/${id}`, {
+      method: "DELETE",
+    });
+
+    // Refresh list after deletion
+    setVehicles((prev) => prev.filter((v) => v.id !== id));
+  };
+
   const filteredVehicles = vehicles.filter((v) =>
     v.vin.toLowerCase().includes(searchQuery.toLowerCase()) ||
     v.license_plate.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -53,10 +64,7 @@ export default function VehicleAdminPage() {
       {/* Top Action Row */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Vehicle List</h2>
-        <Link
-          href="/admin/vehicle/create"
-          className="link-button"
-        >
+        <Link href="/admin/vehicle/create" className="link-button">
           ➕ Create New Vehicle
         </Link>
       </div>
@@ -83,7 +91,9 @@ export default function VehicleAdminPage() {
             <th className="p-2 border">License Plate</th>
             <th className="p-2 border">Customer</th>
             <th className="p-2 border">Phone</th>
-            <th className="p-2 border">Actions</th>
+            <th className="p-2 border">View</th>
+            <th className="p-2 border">Edit</th>
+            <th className="p-2 border">Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -105,11 +115,27 @@ export default function VehicleAdminPage() {
                     View
                   </Link>
                 </td>
+                <td className="p-2 border">
+                  <Link
+                    href={`/admin/vehicle/edit/${v.id}`}
+                    className="text-yellow-600 hover:underline"
+                  >
+                    E
+                  </Link>
+                </td>
+                <td className="p-2 border">
+                  <button
+                    onClick={() => handleDelete(v.id)}
+                    className="text-red-600 hover:underline"
+                  >
+                    D
+                  </button>
+                </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan={8} className="p-4 text-center text-gray-500">
+              <td colSpan={10} className="p-4 text-center text-gray-500">
                 No matching vehicles found.
               </td>
             </tr>

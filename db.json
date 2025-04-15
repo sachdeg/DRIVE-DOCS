@@ -2,7 +2,7 @@
   "services": [
     {
       "service_id": 101,
-      "vin": "1HGCM82633A123455",
+      "vin": "1HGCM82633A123452",
       "make": "Toyota",
       "vehicle_model": "Camry",
       "service_type": "Oil Change",
@@ -38,7 +38,7 @@
     },
     {
       "service_id": 104,
-      "vin": "1HGCM82633A123455",
+      "vin": "1HGCM82633A123453",
       "make": "Toyota",
       "vehicle_model": "Camry",
       "service_type": "Oil Change",
@@ -58,7 +58,7 @@
       "customer_name": "John Doe",
       "phone": "6471234567",
       "service_type": "Oil change",
-      "cost": 50,
+      "cost": 60,
       "service_date": "2025-04-16"
     },
     {
@@ -72,6 +72,32 @@
       "phone": "6471234567",
       "service_type": "tire rotation",
       "cost": 70,
+      "service_date": "2025-04-15"
+    },
+    {
+      "id": "1e6d",
+      "service_id": 107,
+      "vin": "1HGCM82633A123457",
+      "make": "Toyota",
+      "vehicle_model": "Camry",
+      "license_plate": "XYZ123",
+      "customer_name": "John Doe",
+      "phone": "6471234568",
+      "service_type": "oil change",
+      "cost": 85,
+      "service_date": "2025-04-15"
+    },
+    {
+      "id": "daa6",
+      "service_id": 108,
+      "vin": "1HGCM82633A123455",
+      "make": "Audi",
+      "vehicle_model": "Q5",
+      "license_plate": "GHI7272",
+      "customer_name": "John",
+      "phone": "9999900000",
+      "service_type": "Break Pads ",
+      "cost": 250,
       "service_date": "2025-04-15"
     }
   ]
